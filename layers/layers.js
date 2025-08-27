@@ -50,7 +50,7 @@ var lyr_CentrosdeAyuda_3 = new ol.layer.Vector({
                 declutter: false,
                 source:jsonSource_CentrosdeAyuda_3, 
                 style: style_CentrosdeAyuda_3,
-                popuplayertitle: "Centros de Ayuda",
+                popuplayertitle: "Recurso",
                 interactive: true,
     title: 'Centros de Ayuda<br />\
     <img src="styles/legend/CentrosdeAyuda_3_0.png" /> Administración Jurídica<br />\
@@ -63,11 +63,11 @@ var lyr_CentrosdeAyuda_3 = new ol.layer.Vector({
 lyr_OSMStandard_0.setVisible(false);lyr_IGN_1.setVisible(true);lyr_Provincias_2.setVisible(true);lyr_CentrosdeAyuda_3.setVisible(true);
 var layersList = [lyr_OSMStandard_0,lyr_IGN_1,lyr_Provincias_2,lyr_CentrosdeAyuda_3];
 lyr_Provincias_2.set('fieldAliases', {'fid': 'fid', 'gid': 'gid', 'fna': 'fna', 'in1': 'in1', });
-lyr_CentrosdeAyuda_3.set('fieldAliases', {'fid': 'fid', 'Provincia': 'Provincia', 'Localidad': 'Localidad', 'Recurso': 'Recurso', 'Contacto': 'Contacto', 'Telefono codificado': 'Telefono codificado', 'Observaciones': 'Observaciones', 'Correo electrónico': 'Correo electrónico', 'WEB': 'WEB', 'Redes sociales | Instagram': 'Redes sociales | Instagram', 'Tipo': 'Tipo', });
+lyr_CentrosdeAyuda_3.set('fieldAliases', {'fid': 'fid', 'Provincia': 'Provincia', 'Recurso': 'Recurso', 'Contacto': 'Contacto', 'Telefono codificado': 'Telefono codificado', 'Observaciones': 'Observaciones', 'Correo electrónico': 'Correo electrónico', 'WEB': 'WEB', 'Redes sociales | Instagram': 'Redes sociales | Instagram', 'Tipo': 'Tipo', });
 lyr_Provincias_2.set('fieldImages', {'fid': '', 'gid': 'Range', 'fna': 'TextEdit', 'in1': 'Range', });
 lyr_CentrosdeAyuda_3.set('fieldImages', {'fid': 'TextEdit', 'Provincia': 'TextEdit', 'Localidad': 'TextEdit', 'Recurso': 'TextEdit', 'Contacto': 'TextEdit', 'Telefono codificado': 'TextEdit', 'Observaciones': 'TextEdit', 'Correo electrónico': 'TextEdit', 'WEB': 'TextEdit', 'Redes sociales | Instagram': 'TextEdit', 'Tipo': 'TextEdit', });
 lyr_Provincias_2.set('fieldLabels', {'fid': 'no label', 'gid': 'no label', 'fna': 'no label', 'in1': 'no label', });
-lyr_CentrosdeAyuda_3.set('fieldLabels', {'fid': 'hidden field', 'Provincia': 'inline label - visible with data', 'Localidad': 'inline label - visible with data', 'Recurso': 'inline label - visible with data', 'Contacto': 'hidden field', 'Telefono codificado': 'inline label - visible with data', 'Observaciones': 'no label', 'Correo electrónico': 'inline label - visible with data', 'WEB': 'inline label - visible with data', 'Redes sociales | Instagram': 'inline label - visible with data', 'Tipo': 'inline label - visible with data', });
+lyr_CentrosdeAyuda_3.set('fieldLabels', {'fid': 'hidden field', 'Provincia': 'inline label - visible with data', 'Localidad': 'hidden field', 'Recurso': 'inline label - visible with data', 'Contacto': 'hidden field', 'Telefono codificado': 'inline label - visible with data', 'Observaciones': 'no label', 'Correo electrónico': 'inline label - visible with data', 'WEB': 'inline label - visible with data', 'Redes sociales | Instagram': 'inline label - visible with data', 'Tipo': 'inline label - visible with data', });
 lyr_CentrosdeAyuda_3.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
