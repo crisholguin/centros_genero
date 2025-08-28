@@ -24,9 +24,10 @@ var wms_layers = [];
                 url: 'https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG:3857@png/{z}/{x}/{-y}.png'
             })
         });
+
+//Provincias
 var format_Provincias_2 = new ol.format.GeoJSON();
-var features_Provincias_2 = format_Provincias_2.readFeatures(json_Provincias_2, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var features_Provincias_2 = format_Provincias_2.readFeatures(json_Provincias_2);
 var jsonSource_Provincias_2 = new ol.source.Vector({
     attributions: ' ',
 });
@@ -39,6 +40,9 @@ var lyr_Provincias_2 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/Provincias_2.png" /> Provincias'
             });
+
+
+//Centros de Ayuda
 var format_CentrosdeAyuda_3 = new ol.format.GeoJSON();
 var features_CentrosdeAyuda_3 = format_CentrosdeAyuda_3.readFeatures(json_CentrosdeAyuda_3, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
@@ -57,7 +61,8 @@ var lyr_CentrosdeAyuda_3 = new ol.layer.Vector({
     <img src="styles/legend/CentrosdeAyuda_3_1.png" /> Administración Pública<br />\
     <img src="styles/legend/CentrosdeAyuda_3_2.png" /> Centro de Atención<br />\
     <img src="styles/legend/CentrosdeAyuda_3_3.png" /> Línea Telefónica<br />\
-    <img src="styles/legend/CentrosdeAyuda_3_4.png" /> Recursero<br />'
+    <img src="styles/legend/CentrosdeAyuda_3_4.png" /> Recursero<br />\
+    <img src="styles/legend/CentrosdeAyuda_3_5.png" /> Línea Nacional<br />'
         });
 
 lyr_OSMStandard_0.setVisible(false);lyr_IGN_1.setVisible(true);lyr_Provincias_2.setVisible(true);lyr_CentrosdeAyuda_3.setVisible(true);
