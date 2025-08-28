@@ -83,6 +83,22 @@ case 'Recursero':
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
+                    break;
+case 'Línea Nacional':
+                    return [ new ol.style.Style({
+        image: new ol.style.Icon({
+                  imgSize: [1280, 1280],
+                  scale: 0.0125,
+                  anchor: [0.5, 0.5],
+                  anchorXUnits: "fraction",
+                  anchorYUnits: "fraction",
+                  rotation: 0.0,
+                  src: "styles/telefono_5.svg"
+            }),
+        text: createTextStyle(feature, resolution, labelText, labelFont,
+                              labelFill, placement, bufferColor,
+                              bufferWidth)
+    })];
                     break;}};
 
 var style_CentrosdeAyuda_3 = function(feature, resolution){
