@@ -37,9 +37,10 @@ var lyr_Provincias_2 = new ol.layer.Vector({
                 source:jsonSource_Provincias_2, 
                 style: style_Provincias_2,
                 popuplayertitle: "Provincias",
-                interactive: true,
-                title: '<img src="styles/legend/Provincias_2.png" /> Provincias'
+                interactive: false,
+                displayInLayerSwitcher: false
             });
+
 
 
 //Centros de Ayuda

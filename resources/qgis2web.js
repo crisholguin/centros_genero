@@ -143,8 +143,15 @@ function createPopupField(currentFeature, currentFeatureKeys, layer) {
                 popupField += '<strong>' + layer.get('fieldAliases')[currentFeatureKeys[i]] + '</strong><br />';
             }
             if (layer.get('fieldImages')[currentFeatureKeys[i]] != "ExternalResource") {
-				popupField += (currentFeature.get(currentFeatureKeys[i]) != null ? autolinker.link(currentFeature.get(currentFeatureKeys[i]).toLocaleString()) + '</td>' : '');
-			} else {
+				var fieldValue = currentFeature.get(currentFeatureKeys[i]);
+                if (fieldValue != null) {
+                    // Separar lineas en #TELEFONO
+                    if (currentFeatureKeys[i] === "Telefono codificado") {
+                        fieldValue = fieldValue.toString().replace(/\s*\/\s*/g, '<br/>');
+                    }
+                    popupField += autolinker.link(fieldValue.toLocaleString()) + '</td>';
+                }
+            } else {
 				var fieldValue = currentFeature.get(currentFeatureKeys[i]);
 				if (/\.(gif|jpg|jpeg|tif|tiff|png|avif|webp|svg)$/i.test(fieldValue)) {
 					popupField += (fieldValue != null ? '<img src="images/' + fieldValue.replace(/[\\\/:]/g, '_').trim() + '" /></td>' : '');

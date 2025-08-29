@@ -31,6 +31,9 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+
+    width: 275px;
+    white-space: normal; 
 }
 
 .ol-popup:after, .ol-popup:before {
@@ -368,6 +371,23 @@ td video {
 	margin: 1px;
 	max-height: calc(100vh - 200px);
     box-sizing: unset;
+}
+
+.layer-switcher .panel li {
+    line-height: 2.0em;
+    padding: 2px;
+
+}
+
+.layer-switcher .panel input[type="checkbox"],
+.layer-switcher .panel input[type="radio"] {
+    margin: 0; 
+    vertical-align: middle;   /* aligns input with text middle */
+    margin-top: 6px;         /* optional fine-tuning */
+}
+
+.layer-switcher .panel label {
+    vertical-align: middle;
 }
 
 .layer-switcher.shown{
