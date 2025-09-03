@@ -434,7 +434,7 @@ td video {
 
 #lineas-nacionales {
     position: absolute;        /* float above the map */
-    bottom: 10px;              /* 10px from bottom */
+    bottom: 20px;              /* 10px from bottom */
     right: 10px;               /* 10px from right */
     background-color: rgba(248, 248, 248, 0.9);
     padding: 10px 15px;
