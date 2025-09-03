@@ -52,6 +52,25 @@
                 <div id="popup-content"></div>
             </div>
         </div>
+
+        <div id="lineas-nacionales">
+            <h4>Líneas Nacionales</h4>
+            <ul>
+                <li>
+                    <strong>144</strong> Línea atención telefónica especializada para personas que atraviesan situaciones de violencia de género
+                    <p><strong>Contacto: </strong><span class="copy-phone" data-phone="+541127716463">+54 11 2771‑6463</span></p>
+                    <p><strong>Sitio web: </strong><a href="https://www.argentina.gob.ar/linea144" target="_blank">www.argentina.gob.ar/linea144</a></p>
+                </li>
+                <li>
+                    <strong>137</strong> Línea de Asistencia y acompañamiento para víctimas de violencia familiar y/o sexual y asesoramiento para el acceso a la justicia (opción 1)
+                    <p><strong>Contacto: </strong><span class="copy-phone" data-phone="+5491131331000">+54 9 11 3133 1000</span></p>
+                </li>
+                <li>
+                    <strong>911</strong> Emergencias
+                </li>
+            </ul>
+        </div>
+
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
@@ -72,5 +91,54 @@
                 });
             });
         </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Select all phone spans
+                document.querySelectorAll('.copy-phone').forEach(function(el) {
+                    el.style.cursor = 'pointer';  // show pointer on hover
+                    el.title = "Click to copy phone number";
+
+                    el.addEventListener('click', function() {
+                        const phoneNumber = el.getAttribute('data-phone');
+                        navigator.clipboard.writeText(phoneNumber).then(() => {
+                            // Optional: give user feedback
+                            //alert(`Número copiado: ${phoneNumber}`);
+                        }).catch(err => {
+                            console.error('Error copiando al portapapeles:', err);
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const notification = document.getElementById('notification');
+
+                function showNotification(message) {
+                    notification.textContent = message;
+                    notification.classList.add('show');
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 1000); // disappears after 2s
+                }
+
+                document.querySelectorAll('.copy-phone').forEach(function(el) {
+                    el.style.cursor = 'pointer';
+                    el.title = "Click para copiar el número";
+
+                    el.addEventListener('click', function() {
+                        const phoneNumber = el.getAttribute('data-phone');
+                        navigator.clipboard.writeText(phoneNumber).then(() => {
+                            showNotification(`Número copiado: ${phoneNumber}`);
+                        }).catch(err => {
+                            console.error('Error copiando al portapapeles:', err);
+                        });
+                    });
+                });
+            });
+        </script>
+        <div id="notification" class="hidden"></div>
     </body>
 </html>
